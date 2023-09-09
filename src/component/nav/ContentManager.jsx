@@ -3,8 +3,8 @@ function ContentManager() {
     return(
         <div>  
        
-            <button>Content</button>
-            <button>Customize</button>
+            <button id ='content'>Content</button>
+            <button id='customize' >Customize</button>
        
         </div>
     )

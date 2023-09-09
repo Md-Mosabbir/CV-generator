@@ -1,5 +1,5 @@
-import Generated from "./component/GeneratedOutput/GeneratedCV"
-import FullForm from "./component/InformationForm/FullForm"
+import InputField from "./component/InformationForm/InputField"
+import Personal from "./component/InformationForm/Personal/Personal"
 import NavigationBar from "./component/nav/NavigationBar"
 
 
@@ -10,10 +10,10 @@ function App() {
 
   return (
    <>
-   <NavigationBar/>
-   <FullForm/>
-   <Generated/>
-
+    <NavigationBar/>
+    <Personal/>
+   
+    
    </>
   )
 }

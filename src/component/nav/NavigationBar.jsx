@@ -4,7 +4,7 @@ import TemplateManager from "./TemplateManager"
 
 function NavigationBar() {
     return(
-    <nav>
+    <nav>        
         <TemplateManager/>
         <ContentManager/>
     </nav>

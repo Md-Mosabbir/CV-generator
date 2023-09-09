@@ -4,8 +4,8 @@ function TemplateManager() {
     return(
         <div>  
        
-            <button>Clear </button>
-            <button>Load Example</button>
+            <button id="clear">Clear </button>
+            <button id="load-examples" >Load Example</button>
        
         </div>
     )
