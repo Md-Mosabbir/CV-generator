@@ -1,6 +1,6 @@
 import '../../style/inputField.css'
 
-function InputField({labelName,nameText,typeText ,placeholderText, requiredBool}) {
+function InputField({labelName,nameText,typeText ,placeholderText, requiredBool = false}) {
 
  return (
     
