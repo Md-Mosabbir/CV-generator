@@ -1,0 +1,8 @@
+.adding-button {
+    
+    padding: 1.2rem 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--primary-colour);
+    color: var(--neutral-colour);
+    border: none;
+}

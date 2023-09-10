@@ -1,0 +1,21 @@
+.form-buttons > *{
+    padding: 0.8em 2em;
+    background-color: var(--neutral-colour);
+    border: 1px solid var(--brand-colour);
+    border-radius: 1rem;
+    font-family: var(--font-fam-outfit);
+    font-size: 1rem;
+    
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.save-form{
+    border: none;
+    background-color: var(--primary-colour);
+    color: var(--neutral-colour);
+}

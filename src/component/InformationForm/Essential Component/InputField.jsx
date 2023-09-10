@@ -1,4 +1,4 @@
-import '../../style/inputField.css'
+import '../../../style/Essential Component styles/InputField.css'
 
 function InputField({labelName,nameText,typeText ,placeholderText, requiredBool = false}) {
 

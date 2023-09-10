@@ -1,7 +1,4 @@
-import AddButton from "./component/InformationForm/AddButton"
-import Education from "./component/InformationForm/Education/Education"
-import Personal from "./component/InformationForm/Personal/Personal"
-import NavigationBar from "./component/nav/NavigationBar"
+import Information from "./component/InformationForm/Information"
 
 
 
@@ -11,8 +8,10 @@ function App() {
 
   return (
    <>
-    <NavigationBar/>
-    <Personal/>
+    
+    <Information/>
+    
+    
     
     
 

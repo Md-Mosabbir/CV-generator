@@ -1,5 +1,5 @@
-import FormButtons from "../FormButtons";
-import InputField from "../InputField";
+import FormButtons from "../Essential Component/FormButtons";
+import InputField from "../Essential Component/InputField";
 
 
 export default function Education() {
