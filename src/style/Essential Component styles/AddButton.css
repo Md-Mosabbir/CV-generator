@@ -5,4 +5,7 @@
     background-color: var(--primary-colour);
     color: var(--neutral-colour);
     border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

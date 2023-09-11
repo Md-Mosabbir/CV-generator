@@ -8,8 +8,8 @@
 :root{
     --neutral-colour: #F3F3F3;
     --primary-colour: #F72585;
-    --brand-colour: #7209B7;
-    --input-label-colour: #cfa0ee;
+    --brand-colour: #cfa0ee;
+    --input-label-colour: #7209B7;
 
     --font-fam-outfit: 'Outfit', sans-serif;
 }

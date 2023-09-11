@@ -22,7 +22,7 @@
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background-color: var(--input-label-colour);    
+    background-color: var(--brand-colour);    
     background-size: 20px;
     background-position: center;
     width: 30px;
