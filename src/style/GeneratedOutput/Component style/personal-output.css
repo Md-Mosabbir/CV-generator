@@ -1,0 +1,26 @@
+.personal-info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: pink;
+}
+
+.contact-info-container-cv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.personal-info-cv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.image{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

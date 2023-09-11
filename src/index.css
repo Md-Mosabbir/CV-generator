@@ -14,3 +14,13 @@
     --font-fam-outfit: 'Outfit', sans-serif;
 }
 
+#root{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media print{
+    .edit{
+        display: none;
+    }
+}

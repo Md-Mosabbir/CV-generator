@@ -1,6 +1,7 @@
 import DropDown from "../Essential Component/DropDown";
 import AddButton from "../Essential Component/AddButton"
 import Education from "../Education/Education"
+import "../../../style/dropdownContainer.css"
 
 export default function EducationCompiled() {
   return (

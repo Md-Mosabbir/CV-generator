@@ -1,0 +1,13 @@
+.cv-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.main-cv{
+    background-color: aqua;
+    width: 8.27in;
+    height: 11.69in;
+    
+
+}
