@@ -4,7 +4,7 @@ import Education from "../Experience/Experince"
 
 export default function ExperienceCompiled() {
   return (
-    <div className="experince-container">
+    <div className="experince-form-container">
         <DropDown nameDrop={'Experience'}/>
         <div className="drop-down-container">
         <AddButton buttonName={'Experience'}/>

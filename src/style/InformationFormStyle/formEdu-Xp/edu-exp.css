@@ -1,0 +1,6 @@
+.education-form-container,
+.experince-form-container{
+    background-color: var(--neutral-colour);
+    border-radius: 15px;
+    
+}

@@ -1,6 +1,6 @@
 import FormButtons from "../Essential Component/FormButtons";
 import InputField from "../Essential Component/InputField";
-import "../../../style/form.css"
+import "../../../style/InformationFormStyle/formEdu-Xp/form.css"
 
 export default function Experince() {
     return (

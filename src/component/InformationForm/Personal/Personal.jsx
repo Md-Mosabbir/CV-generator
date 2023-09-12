@@ -1,5 +1,5 @@
 import InputField from "../Essential Component/InputField";
-import '../../../style/personal.css'
+import '../../../style/InformationFormStyle/Personal styles/personal.css'
 
 export default function Personal() {
   return (
