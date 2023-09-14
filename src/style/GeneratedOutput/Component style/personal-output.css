@@ -18,6 +18,14 @@
     gap: 0.2rem;
 }
 
+.grid-right{
+    justify-self: end;
+}
+
+.address{
+    padding-top: 5px;
+}
+
 .image{
     background-color: blue;
     width: 100px;

@@ -14,7 +14,7 @@
     --font-fam-outfit: 'Outfit', sans-serif;
 }
 
-#root{
+.app{
     display: flex;
     justify-content: space-between;
 }
