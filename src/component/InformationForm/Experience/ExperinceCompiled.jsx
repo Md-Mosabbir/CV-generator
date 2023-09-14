@@ -5,8 +5,8 @@ import Experince from "./Experince"
 export default function ExperienceCompiled() {
   return (
     <div className="experince-form-container">
-        <DropDown nameDrop={'Experience'} children={<><AddButton buttonName={'Experience'}/>
-        <Experince/></>}/>
+        <DropDown nameDrop={'Experience'} children={<><AddButton buttonName={'Experience'} children={<Experince/>}/>
+        </>}/>
         
     </div>
   )
