@@ -1,6 +1,9 @@
 import '../../../style/Essential Component styles/InputField.css'
 
-function InputField({labelName, nameText, typeText ,placeholderText, requiredBool = false, valueField, onChange }) {
+function InputField({labelName, nameText, typeText ,placeholderText, requiredBool = false, valueField, onChange,  }) {
+
+  
+
 
  return (
     

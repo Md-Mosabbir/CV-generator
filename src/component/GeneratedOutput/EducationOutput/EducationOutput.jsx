@@ -1,17 +1,31 @@
-import "../../../style/GeneratedOutput/Component style/edu-xp.css"
+import '../../../style/GeneratedOutput/Component style/edu-xp.css';
 
-export default function EducationOutput() {
+export default function EducationOutput({ entries }) {
   return (
-    <div className="education-container edu-ex-style">
-        <h3 className="edu-xp-title">Education</h3>
+    <div className="education-container">
+      <div  className=' edu-ex-style'>
+      <h3 className="edu-xp-title">Education</h3>
+
+      {entries.map((info, index) => (
+        
+        <div key={index} className='each-edu'>
+        
         <div className="edu-content">
-            <span>2/12/2019 - 1/1/2023</span>  
-            <span>New York,US</span>
+          <span>{info.startDate} - {info.endDate}</span>
+          <span>{info.location}</span>
         </div>
         <div className="edu-content">
-            <h3>London City University</h3>
-            <p>Bachelors in Computer Science</p>
+          <h3>{info.school}</h3>
+          <p>{info.degree}</p>
         </div>
+      </div>
+    ))}
+        
+      </div>
+      
+ 
     </div>
-  )
+  );
 }
+
+

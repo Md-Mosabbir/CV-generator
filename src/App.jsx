@@ -20,7 +20,50 @@ function App() {
   const [emailval, setEmailVal] = useState("")
   const [phoneval, setPhoneVal] = useState("")
   const [addressVal, setAddressVal] = useState("")
+
+  // edu array 
+  // onj edu info
+
+
+
+  const [eduFormData, setEduFormData] = useState({
+    school: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  })
+
+  const [allEduInfoArray, setAllEduInfoArray] = useState([])
+
+  const handleEduFormChange = (event) => {
+    const { name, value } = event.target;
+    setEduFormData({ ...eduFormData, [name]: value });
+  };
+  
+
+  const handleFormSubmit = (eduFormData) => {
+    // Adding a new entry
+    setAllEduInfoArray([...allEduInfoArray, eduFormData]);
+
+  };
+
+  const handleSubmit = () => {
     
+    handleFormSubmit(eduFormData);
+    
+    setEduFormData({
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+    });
+  };
+  
+  
+
+
 
   return (
    <div className="app">
@@ -28,7 +71,7 @@ function App() {
     <div className="edit">
         <NavigationBar/>
         <Personal nameval={nameval} emailval={emailval} phoneval={phoneval} addressVal={addressVal} setNameVal={setNameVal} setEmailVal={setEmailVal} setPhoneVal={setPhoneVal} setAddressVal={setAddressVal}/>
-        <EducationCompiled/>
+        <EducationCompiled eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleSubmit} />
         <ExperienceCompiled/>
 
       
@@ -38,7 +81,7 @@ function App() {
     <div className="cv-container">
         <div className="main-cv">
             <PersonalOutput  name={nameval} mail={emailval} phone={phoneval} address={addressVal}/>
-            <EducationOutput/>
+            <EducationOutput entries={allEduInfoArray}/>
             <ExperinceOutput/>
         </div>
      </div>
