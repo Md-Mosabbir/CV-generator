@@ -11,7 +11,7 @@ export default function EducationOutput({ entries }) {
         <div key={index} className='each-edu'>
         
         <div className="edu-content">
-          <span>{info.startDate} - {info.endDate}</span>
+          <span>{info.startEdu} - {info.endEdu}</span>
           <span>{info.location}</span>
         </div>
         <div className="edu-content">

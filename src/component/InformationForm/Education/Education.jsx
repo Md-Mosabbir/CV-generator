@@ -2,7 +2,7 @@ import FormButtons from "../Essential Component/FormButtons";
 import InputField from "../Essential Component/InputField";
 
 
-export default function Education({data, handleInput, handleInputBlur, submit}) {
+export default function Education({data, handleInput, submit}) {
   
   return (
 
@@ -13,9 +13,9 @@ export default function Education({data, handleInput, handleInputBlur, submit}) 
 
         <InputField labelName={'Degree'} nameText={'degree'} typeText={'text'} placeholderText={'Enter Degree/ Field Of Study'} requiredBool = {true} valueField={data.degree} onChange={handleInput}/>
 
-        <InputField labelName={'Start Date'} nameText={'start-date'} typeText={'date'} placeholderText={'Enter Start Date '} requiredBool = {true} valueField={data.startDate} onChange={handleInput} onBlur={handleInputBlur}/>
+        <InputField labelName={'Start Date'} nameText={'startEdu'} typeText={'text'} placeholderText={'Enter Start text '} requiredBool = {true} valueField={data.startEdu} onChange={handleInput}/>
 
-        <InputField labelName={'End Date'} nameText={'end-date'} typeText={'date'} placeholderText={'Enter End Date '} requiredBool = {true} valueField={data.endDate} onChange={handleInput} onBlur={handleInputBlur}/>
+        <InputField labelName={'End Date'} nameText={'endEdu'} typeText={'text'} placeholderText={'Enter End Date '} requiredBool = {true} valueField={data.endEdu} onChange={handleInput}/>
 
         <InputField labelName={'Location'} nameText={'location'} typeText={'text'} placeholderText={'Enter Location '} valueField={data.location} onChange={handleInput}/>
 

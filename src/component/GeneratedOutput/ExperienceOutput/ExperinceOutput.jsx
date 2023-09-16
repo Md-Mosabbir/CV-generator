@@ -1,21 +1,33 @@
 import "../../../style/GeneratedOutput/Component style/edu-xp.css"
 
-export default function ExperinceOutput() {
+  export default function ExperinceOutput({ entries }) {
     return (
-      <div className="experince-container edu-ex-style">
-          <h3 className="edu-xp-title">Experince</h3>
+      <div className="education-container">
+        <div  className=' edu-ex-style'>
+        <h3 className="edu-xp-title">Experince</h3>
+  
+        {entries.map((info, index) => (
+          
+          <div key={index} className='each-xp'>
+          
           <div className="xp-content">
-              <span>2/12/2019 - 1/1/2023</span>  
-              <span>New York,US</span>
+            <span>{info.startExp} - {info.endExp}</span>
+            <span>{info.locationXp}</span>
           </div>
           <div className="xp-content">
-              <h3>London City University</h3>
-              <p>Bachelors in Computer Science</p>
-              <div className="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque laborum officia repellat mollitia suscipit, nostrum voluptatum officiis eius iste, ea, ab maiores aut voluptas excepturi neque similique ipsa eligendi!
-              </div>
+            <h3>{info.company}</h3>
+            <p>{info.position}</p>
+            <p className="description">{info.description}</p>
           </div>
+        </div>
+      ))}
+          
+        </div>
+        
+   
       </div>
-    )
+    );
   }
+  
+  
   

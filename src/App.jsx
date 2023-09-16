@@ -26,11 +26,11 @@ function App() {
 
 
 
-  const [eduFormData, setEduFormData] = useState({
+  const [eduFormData, setEduFormData] = useState({    
     school: '',
     degree: '',
-    startDate: '',
-    endDate: '',
+    startEdu: '',
+    endEdu: '',
     location: '',
   })
 
@@ -48,20 +48,59 @@ function App() {
 
   };
 
-  const handleSubmit = () => {
+  const handleEduSubmit = () => {
     
     handleFormSubmit(eduFormData);
     
     setEduFormData({
       school: '',
       degree: '',
-      startDate: '',
-      endDate: '',
+      startEdu: '',
+      endEdu: '',
       location: '',
     });
   };
+
+  // --------------------------------------------------------
   
+  const [expFormData, setExpFormData] = useState({    
+    company: '',
+    position: '',
+    startExp: '',
+    endExp: '',
+    locationXp: '',
+    description: '',
+  })
+
+  const [allExpInfoArray, setAllExpInfoArray] = useState([])
+
+  const handleExpFormChange = (event) => {
+    const { name, value } = event.target;
+    setExpFormData({ ...expFormData, [name]: value });
+  };
   
+
+  const handleExpFormSubmit = (expFormData) => {
+    // Adding a new entry
+    setAllExpInfoArray([...allExpInfoArray, expFormData]);
+
+  };
+
+  const handleExpSubmit = () => {
+    
+    handleExpFormSubmit(expFormData);
+    
+    setExpFormData({
+      company: '',
+      position: '',
+      startExp: '',
+      endExp: '',
+      locationXp: '',
+      description: '',
+    });
+  };
+  
+    
 
 
 
@@ -71,8 +110,8 @@ function App() {
     <div className="edit">
         <NavigationBar/>
         <Personal nameval={nameval} emailval={emailval} phoneval={phoneval} addressVal={addressVal} setNameVal={setNameVal} setEmailVal={setEmailVal} setPhoneVal={setPhoneVal} setAddressVal={setAddressVal}/>
-        <EducationCompiled eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleSubmit} />
-        <ExperienceCompiled/>
+        <EducationCompiled eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} />
+        <ExperienceCompiled data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit}/>
 
       
         
@@ -82,7 +121,7 @@ function App() {
         <div className="main-cv">
             <PersonalOutput  name={nameval} mail={emailval} phone={phoneval} address={addressVal}/>
             <EducationOutput entries={allEduInfoArray}/>
-            <ExperinceOutput/>
+            <ExperinceOutput entries={allExpInfoArray}/>
         </div>
      </div>
     
