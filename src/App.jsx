@@ -14,6 +14,7 @@ import "./index.css"
 
 
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [nameval, setNameVal] = useState("")
@@ -26,7 +27,8 @@ function App() {
 
 
 
-  const [eduFormData, setEduFormData] = useState({    
+  const [eduFormData, setEduFormData] = useState({   
+    id: uuidv4(), 
     school: '',
     degree: '',
     startEdu: '',
@@ -53,6 +55,7 @@ function App() {
     handleFormSubmit(eduFormData);
     
     setEduFormData({
+      id: uuidv4(),
       school: '',
       degree: '',
       startEdu: '',
@@ -64,6 +67,7 @@ function App() {
   // --------------------------------------------------------
   
   const [expFormData, setExpFormData] = useState({    
+    id: uuidv4(),
     company: '',
     position: '',
     startExp: '',
@@ -91,6 +95,7 @@ function App() {
     handleExpFormSubmit(expFormData);
     
     setExpFormData({
+      id: uuidv4(),
       company: '',
       position: '',
       startExp: '',

@@ -5,12 +5,9 @@ import "../../../style/InformationFormStyle/Dropdown styles/dropdownContainer.cs
 
 import "../../../style/Essential Component styles/Dropdown.css";
 
-export default function DropDown({ nameDrop, children }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+export default function DropDown({ nameDrop, children, isDropdownOpen, toggleDropdown, }) {  
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+
 
   return (
     <>

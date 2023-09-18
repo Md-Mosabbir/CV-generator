@@ -6,9 +6,9 @@ export default function EducationOutput({ entries }) {
       <div  className=' edu-ex-style'>
       <h3 className="edu-xp-title">Education</h3>
 
-      {entries.map((info, index) => (
+      {entries.map((info) => (
         
-        <div key={index} className='each-edu'>
+        <div key={info.id} className='each-edu'>
         
         <div className="edu-content">
           <span>{info.startEdu} - {info.endEdu}</span>
