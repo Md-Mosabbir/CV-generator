@@ -115,8 +115,8 @@ function App() {
     <div className="edit">
         <NavigationBar/>
         <Personal nameval={nameval} emailval={emailval} phoneval={phoneval} addressVal={addressVal} setNameVal={setNameVal} setEmailVal={setEmailVal} setPhoneVal={setPhoneVal} setAddressVal={setAddressVal}/>
-        <EducationCompiled eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} />
-        <ExperienceCompiled data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit}/>
+        <EducationCompiled entries={allEduInfoArray} eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} />
+        <ExperienceCompiled entries={allExpInfoArray} data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit}/>
 
       
         

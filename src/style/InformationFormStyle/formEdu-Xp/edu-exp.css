@@ -5,3 +5,16 @@
     
     
 }
+
+.list-of-names-container{
+    width: 100%;
+    
+    padding: 1rem 0;
+}
+
+.entries{
+    background-color: pink;
+    padding: 1.1rem 1.5rem;
+    border-radius: 15px;
+    margin: 0.9rem 1.5rem;
+}

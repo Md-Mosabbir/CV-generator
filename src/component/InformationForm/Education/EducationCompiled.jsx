@@ -6,7 +6,30 @@ import Education from "../Education/Education"
 import "../../../style/InformationFormStyle/formEdu-Xp/edu-exp.css"
 import { useState } from "react"
 
-export default function EducationCompiled({eduForm, setEduform, submit}) {
+
+
+
+function DisplayList({entries }) {
+    
+  return (
+    
+    <div className="list-of-names-container">
+        
+        {entries.map((info) => (
+        
+        <div key={info.id} className='entries'>
+        
+          <h2>{info.school}</h2>
+          
+        </div>
+    ))}
+
+    </div>
+  )
+}
+
+
+export default function EducationCompiled({entries,eduForm, setEduform, submit}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [showForm, setShowForm] = useState(true) // Initial state is true to show the form
 
@@ -37,7 +60,13 @@ export default function EducationCompiled({eduForm, setEduform, submit}) {
   return (
     <div className="education-form-container">
 
-      <DropDown nameDrop={'Education'} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} children={<><AddButton add={add} handleAdd={toggleAddButton} buttonName={'Education'} children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel}/>)}/></>
+      <DropDown nameDrop={'Education'} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} children={<>
+      {!showForm && (<DisplayList entries={entries}/>)} 
+      <AddButton 
+      add={add} 
+      handleAdd={toggleAddButton} 
+      buttonName={'Education'} 
+      children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel}/>)}/></>
       }/>    
    
     </div>
