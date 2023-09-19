@@ -1,4 +1,4 @@
-import NavigationBar from "./component/InformationForm/nav/NavigationBar"
+
 import Personal from "./component/InformationForm/Personal/Personal"
 import EducationCompiled from "./component/InformationForm/Education/EducationCompiled"
 import ExperienceCompiled from "./component/InformationForm/Experience/ExperinceCompiled"
@@ -28,7 +28,7 @@ function App() {
 
 
   const [eduFormData, setEduFormData] = useState({   
-    id: uuidv4(), 
+    id: '', 
     school: '',
     degree: '',
     startEdu: '',
@@ -44,18 +44,26 @@ function App() {
   };
   
 
-  const handleFormSubmit = (eduFormData) => {
-    // Adding a new entry
-    setAllEduInfoArray([...allEduInfoArray, eduFormData]);
 
-  };
 
   const handleEduSubmit = () => {
-    
-    handleFormSubmit(eduFormData);
+    const findEditIndex = allEduInfoArray.findIndex( itm => itm.id === eduFormData.id) 
+
+    if (findEditIndex !== -1) {
+      // If found, replace the existing item with eduFormData
+      const updatedEduInfoArray = [...allEduInfoArray];
+      updatedEduInfoArray[findEditIndex] = eduFormData;
+      setAllEduInfoArray(updatedEduInfoArray);
+    } else {
+      const giveId = uuidv4();
+      eduFormData.id = giveId;
+      setAllEduInfoArray([...allEduInfoArray, eduFormData]);
+    }
+
+
     
     setEduFormData({
-      id: uuidv4(),
+      id: '',
       school: '',
       degree: '',
       startEdu: '',
@@ -67,7 +75,7 @@ function App() {
   // --------------------------------------------------------
   
   const [expFormData, setExpFormData] = useState({    
-    id: uuidv4(),
+    id: '',
     company: '',
     position: '',
     startExp: '',
@@ -75,6 +83,7 @@ function App() {
     locationXp: '',
     description: '',
   })
+  
 
   const [allExpInfoArray, setAllExpInfoArray] = useState([])
 
@@ -84,18 +93,26 @@ function App() {
   };
   
 
-  const handleExpFormSubmit = (expFormData) => {
-    // Adding a new entry
-    setAllExpInfoArray([...allExpInfoArray, expFormData]);
 
-  };
 
   const handleExpSubmit = () => {
-    
-    handleExpFormSubmit(expFormData);
+    const findEditIndex = allExpInfoArray.findIndex( itm => itm.id === expFormData.id) 
+
+    if (findEditIndex !== -1) {
+      // If found, replace the existing item with eduFormData
+      const updatedExpArray = [...allExpInfoArray];
+      updatedExpArray[findEditIndex] = expFormData;
+      setAllExpInfoArray(updatedExpArray);
+    } else {
+      const giveId = uuidv4();
+      expFormData.id = giveId;
+      setAllExpInfoArray([...allExpInfoArray, expFormData]);
+    }
+
+
     
     setExpFormData({
-      id: uuidv4(),
+      id: '',
       company: '',
       position: '',
       startExp: '',
@@ -104,8 +121,6 @@ function App() {
       description: '',
     });
   };
-  
-    
 
 
 
@@ -113,7 +128,7 @@ function App() {
    <div className="app">
     
     <div className="edit">
-        <NavigationBar/>
+
         <Personal nameval={nameval} emailval={emailval} phoneval={phoneval} addressVal={addressVal} setNameVal={setNameVal} setEmailVal={setEmailVal} setPhoneVal={setPhoneVal} setAddressVal={setAddressVal}/>
         <EducationCompiled entries={allEduInfoArray} eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} />
         <ExperienceCompiled entries={allExpInfoArray} data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit}/>

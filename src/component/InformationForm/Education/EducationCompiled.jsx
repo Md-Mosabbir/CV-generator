@@ -9,7 +9,9 @@ import { useState } from "react"
 
 
 
-function DisplayList({entries }) {
+function DisplayList({entries, handleEdit }) {
+
+
     
   return (
     
@@ -17,9 +19,9 @@ function DisplayList({entries }) {
         
         {entries.map((info) => (
         
-        <div key={info.id} className='entries'>
+        <div key={info.id} id= {info.id} className="entries" onClick={handleEdit}>
         
-          <h2>{info.school}</h2>
+          <h2 style={{display: 'inline'}}>{info.school}</h2>
           
         </div>
     ))}
@@ -29,7 +31,7 @@ function DisplayList({entries }) {
 }
 
 
-export default function EducationCompiled({entries,eduForm, setEduform, submit}) {
+export default function EducationCompiled({entries, eduForm, setEduform, submit}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [showForm, setShowForm] = useState(true) // Initial state is true to show the form
 
@@ -56,17 +58,53 @@ export default function EducationCompiled({entries,eduForm, setEduform, submit})
     setShowForm(true) 
   }
 
+    
+  const handleEdit = (e) => {
+    setShowForm(true) 
+    setAdd(true)
+    e.stopPropagation()
+    const id = e.target.id
+
+    if(id !== ''){
+      const findInfo = entries.find(info => info.id === id)
+
+      if(findInfo){
+        eduForm.id = findInfo.id
+        
+        eduForm.school = findInfo.school
+        eduForm.degree = findInfo.degree
+        eduForm.startEdu = findInfo.startEdu
+        eduForm.endEdu = findInfo.endEdu
+        eduForm.location = findInfo.location
+      }
+    }
+
+  }    
+  const handleDeleteEducation = () => {
+    setShowForm(false) 
+    setAdd(false)
+    
+    if(eduForm.id !== ''){
+      const search = entries.findIndex(edu => edu.id === eduForm.id)
+
+      if(search !== -1){
+        entries.splice(search, 1)
+      }
+    }
+
+  }
+
 
   return (
     <div className="education-form-container">
 
       <DropDown nameDrop={'Education'} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} children={<>
-      {!showForm && (<DisplayList entries={entries}/>)} 
+      {!showForm && (<DisplayList entries={entries} handleEdit={handleEdit}/>)} 
       <AddButton 
       add={add} 
       handleAdd={toggleAddButton} 
       buttonName={'Education'} 
-      children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel}/>)}/></>
+      children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel} del={handleDeleteEducation}/>)}/></>
       }/>    
    
     </div>

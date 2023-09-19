@@ -2,7 +2,7 @@ import FormButtons from "../Essential Component/FormButtons";
 import InputField from "../Essential Component/InputField";
 import "../../../style/InformationFormStyle/formEdu-Xp/form.css"
 
-export default function Experince({data, setExpInfo, submit, cancel }) {
+export default function Experince({data, setExpInfo, submit, cancel, del }) {
     return (
 
         <div className="form-container">        
@@ -26,7 +26,7 @@ export default function Experince({data, setExpInfo, submit, cancel }) {
     
           </form>
     
-          <FormButtons submit={submit} cancel={cancel}/>
+          <FormButtons submit={submit} cancel={cancel} del={del}/>
         </div>
        
       )

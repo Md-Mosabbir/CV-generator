@@ -2,7 +2,7 @@ import FormButtons from "../Essential Component/FormButtons";
 import InputField from "../Essential Component/InputField";
 
 
-export default function Education({data, handleInput, submit, cancel}) {
+export default function Education({data, handleInput, submit, cancel, del}) {
   
   return (
 
@@ -21,7 +21,7 @@ export default function Education({data, handleInput, submit, cancel}) {
 
       </form>
 
-      <FormButtons submit = {submit} cancel={cancel}/>
+      <FormButtons submit = {submit} cancel={cancel} del={del}/>
     </div>
    
   )

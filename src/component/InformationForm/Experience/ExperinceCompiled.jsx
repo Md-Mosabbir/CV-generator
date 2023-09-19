@@ -3,27 +3,29 @@ import AddButton from "../Essential Component/AddButton"
 import Experince from "./Experince"
 import { useState } from "react";
 
+function DisplayList({entries, handleEdit }) {
+    
+  return (
+    
+    <div className="list-of-names-container">
+        
+        {entries.map((info) => (
+        
+        <div key={info.id} id= {info.id} className='entries' onClick={handleEdit}>
+        
+          <h2 style={{display: 'inline'}}>{info.company}</h2>
+          
+        </div>
+    ))}
+
+    </div>
+  )
+}
+
 export default function ExperienceCompiled({entries, data, setExpInfo, submit}) {
 
 
-  function DisplayList({entries }) {
-    
-    return (
-      
-      <div className="list-of-names-container">
-          
-          {entries.map((info) => (
-          
-          <div key={info.id} className='entries'>
-          
-            <h2>{info.company}</h2>
-            
-          </div>
-      ))}
-  
-      </div>
-    )
-  }
+
   
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -51,15 +53,53 @@ export default function ExperienceCompiled({entries, data, setExpInfo, submit}) 
     setAdd(!add)
     setShowForm(true) 
   }
+
+  const handleEdit = (e) => {
+    setShowForm(true) 
+    setAdd(true)
+    e.stopPropagation()
+    const id = e.target.id
+
+    if(id !== ''){
+      const findInfo = entries.find(info => info.id === id)
+
+      if(findInfo){
+        data.id = findInfo.id
+        
+        data.company = findInfo.company
+        data.position = findInfo.position
+        data.startExp = findInfo.startExp
+        data.endExp = findInfo.endExp
+        data.locationXp = findInfo.locationXp
+        data.description = findInfo.description
+      }
+    }
+
+  }
+
+  const handleDeleteEducation = () => {
+    setShowForm(false) 
+    setAdd(false)
+    
+    if(data.id !== ''){
+      const search = entries.findIndex(xp => xp.id === data.id)
+
+      if(search !== -1){
+        entries.splice(search, 1)
+      }
+    }
+
+  }
+
   return (
     <div className="experince-form-container">
         <DropDown nameDrop={'Experience'} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} children={
         <>
-          {!showForm && (<DisplayList entries={entries}/>)} 
+          {!showForm && (<DisplayList entries={entries} handleEdit={handleEdit}/>)} 
            <AddButton add={add}
            handleAdd={toggleAddButton}
            buttonName={'Experience'} 
-           children={showForm && ( < Experince data={data} setExpInfo={setExpInfo} submit={submit} cancel={handleCancel} />)}/>
+           children={showForm && ( < Experince data={data} setExpInfo={setExpInfo} submit={submit} cancel={handleCancel} del={handleDeleteEducation} />)}/>
         </>}/>
         
     </div>
