@@ -31,7 +31,7 @@ function DisplayList({entries, handleEdit }) {
 }
 
 
-export default function EducationCompiled({entries, eduForm, setEduform, submit}) {
+export default function EducationCompiled({entries, eduForm, setEduform, submit, handleDeleteEducation}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [showForm, setShowForm] = useState(true) // Initial state is true to show the form
 
@@ -79,21 +79,13 @@ export default function EducationCompiled({entries, eduForm, setEduform, submit}
       }
     }
 
-  }    
-  const handleDeleteEducation = () => {
+  } 
+  
+  const handleDelete = () =>{
     setShowForm(false) 
     setAdd(false)
-    
-    if(eduForm.id !== ''){
-      const search = entries.findIndex(edu => edu.id === eduForm.id)
-
-      if(search !== -1){
-        entries.splice(search, 1)
-      }
-    }
-
+    handleDeleteEducation()
   }
-
 
   return (
     <div className="education-form-container">
@@ -104,7 +96,7 @@ export default function EducationCompiled({entries, eduForm, setEduform, submit}
       add={add} 
       handleAdd={toggleAddButton} 
       buttonName={'Education'} 
-      children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel} del={handleDeleteEducation}/>)}/></>
+      children={showForm && (<Education data={eduForm}  handleInput={setEduform} submit={submit} cancel={handleCancel} del={handleDelete}/>)}/></>
       }/>    
    
     </div>

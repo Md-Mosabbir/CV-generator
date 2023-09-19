@@ -22,7 +22,7 @@ function DisplayList({entries, handleEdit }) {
   )
 }
 
-export default function ExperienceCompiled({entries, data, setExpInfo, submit}) {
+export default function ExperienceCompiled({entries, data, setExpInfo, submit, del}) {
 
 
 
@@ -77,17 +77,11 @@ export default function ExperienceCompiled({entries, data, setExpInfo, submit}) 
 
   }
 
-  const handleDeleteEducation = () => {
-    setShowForm(false) 
-    setAdd(false)
-    
-    if(data.id !== ''){
-      const search = entries.findIndex(xp => xp.id === data.id)
+  const handleDelete = () => {
+    setShowForm(false);
+    setAdd(false);
 
-      if(search !== -1){
-        entries.splice(search, 1)
-      }
-    }
+    del()
 
   }
 
@@ -99,7 +93,7 @@ export default function ExperienceCompiled({entries, data, setExpInfo, submit}) 
            <AddButton add={add}
            handleAdd={toggleAddButton}
            buttonName={'Experience'} 
-           children={showForm && ( < Experince data={data} setExpInfo={setExpInfo} submit={submit} cancel={handleCancel} del={handleDeleteEducation} />)}/>
+           children={showForm && ( < Experince data={data} setExpInfo={setExpInfo} submit={submit} cancel={handleCancel} del={handleDelete} />)}/>
         </>}/>
         
     </div>

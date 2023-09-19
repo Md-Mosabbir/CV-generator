@@ -61,6 +61,7 @@ function App() {
     }
 
 
+
     
     setEduFormData({
       id: '',
@@ -71,6 +72,31 @@ function App() {
       location: '',
     });
   };
+
+  const handleDeleteEducation = () => {
+
+  
+    if (eduFormData.id !== '') {
+      // Create a new array without the entry to be deleted
+      const updatedEntries = allEduInfoArray.filter(edu => edu.id !== eduFormData.id);
+      
+      // Update the state with the new array
+      setAllEduInfoArray(updatedEntries);
+    }
+    else{
+      return
+    }
+
+    setEduFormData({
+      id: '',
+      company: '',
+      position: '',
+      startExp: '',
+      endExp: '',
+      locationXp: '',
+      description: '',
+    });
+  }
 
   // --------------------------------------------------------
   
@@ -92,7 +118,30 @@ function App() {
     setExpFormData({ ...expFormData, [name]: value });
   };
   
+  const handleDeleteExperince = () => {
 
+  
+    if (eduFormData.id !== '') {
+      // Create a new array without the entry to be deleted
+      const updatedEntries = allExpInfoArray.filter(edu => edu.id !== expFormData.id);
+      
+      // Update the state with the new array
+      setAllExpInfoArray(updatedEntries);
+    }
+    else{
+      return
+    }
+
+    setExpFormData({
+      id: '',
+      company: '',
+      position: '',
+      startExp: '',
+      endExp: '',
+      locationXp: '',
+      description: '',
+    });
+  }
 
 
   const handleExpSubmit = () => {
@@ -130,8 +179,8 @@ function App() {
     <div className="edit">
 
         <Personal nameval={nameval} emailval={emailval} phoneval={phoneval} addressVal={addressVal} setNameVal={setNameVal} setEmailVal={setEmailVal} setPhoneVal={setPhoneVal} setAddressVal={setAddressVal}/>
-        <EducationCompiled entries={allEduInfoArray} eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} />
-        <ExperienceCompiled entries={allExpInfoArray} data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit}/>
+        <EducationCompiled entries={allEduInfoArray} eduForm={eduFormData} setEduform={handleEduFormChange} submit = {handleEduSubmit} setEduArray={setAllEduInfoArray} handleDeleteEducation={handleDeleteEducation} />
+        <ExperienceCompiled entries={allExpInfoArray} data={expFormData} setExpInfo={handleExpFormChange} submit={handleExpSubmit} del={handleDeleteExperince}/>
 
       
         
