@@ -13,8 +13,18 @@
 }
 
 .entries{
-    background-color: pink;
+    background-color: var(--input-label-colour );
+    font-family: var(--font-fam-cv-content);
+    font-size: 0.9rem;
+    color: var(--neutral-colour);
     padding: 1.1rem 1.5rem;
     border-radius: 8px;
     margin: 0.9rem 1.5rem;
+    text-align: left;
+}
+
+.entries:hover{
+    background-color: var(--primary-colour);
+    cursor: pointer;
+    transition: background-color 0.25s ease;
 }

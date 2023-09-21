@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Exo+2:wght@600&family=Outfit&family=Roboto:wght@300&family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Outfit&family=Poppins&family=Roboto:wght@300&family=Rubik&family=Rubik+Iso&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +11,15 @@
     --brand-colour: #cfa0ee;
     --input-label-colour: #7209B7;
 
+    --cv-personal-colour: rgb(40, 33, 134);
+
     --font-fam-outfit: 'Outfit', sans-serif;
+
+    --font-fam-cv-personal: 'Poppins', sans-serif;
+
+    --font-fam-cv-content: 'Rubik', sans-serif;
+
+
 }
 
 .app{
@@ -22,5 +30,13 @@
 @media print{
     .edit{
         display: none;
+    }
+    .cv-container{
+        width: auto;
+        display: block;
+        padding: 0;
+    }
+    .main-cv{
+        box-shadow: none;
     }
 }

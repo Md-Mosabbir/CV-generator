@@ -1,6 +1,7 @@
 .edu-ex-style{
     margin-top: 40px;
     padding: 0 56px;
+    font-family: var(--font-fam-cv-content);
  
     
 }
@@ -16,6 +17,7 @@
 
 .edu-xp-title{
     grid-column: 1/3;
+    padding-bottom: 10px;
     border-bottom: 1px solid black;
 }
 
