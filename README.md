@@ -14,6 +14,6 @@ Hello! 👋 I'm excited to introduce you to my CV generator. I believe in the po
 
 ## Demo
 
-Check out the [CV Generator](https://your-cv-generator-demo-link.com) in action!
+Check out the [CV Generator](https://cv-generator-nine.vercel.app/) in action!
 
 
