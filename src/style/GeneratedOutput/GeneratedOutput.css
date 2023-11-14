@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 .main-cv{
     background-color: #fff;
@@ -11,4 +11,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     
 
+}
+
+@media (max-width:1300px) {
+    .cv-container{
+        width: auto;
+        
+    }
+    .main-cv{
+        
+        scale: 0.7;
+    }
 }
