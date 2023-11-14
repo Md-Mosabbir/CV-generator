@@ -13,11 +13,8 @@
 
 }
 
-@media (max-width:1300px) {
-    .cv-container{
-        width: auto;
-        
-    }
+@media (max-width:1000px) {
+    
     .main-cv{
         
         scale: 0.7;
